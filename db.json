@@ -1,0 +1,99 @@
+{
+  "account": {
+    "balance": 3000,
+    "cards": [
+      {
+        "id": 1,
+        "name": "Mark Henry",
+        "number": "5555-5555-5555-5555",
+        "date": "27/30",
+        "cvv": "325",
+        "type": "visa",
+        "frozen": false,
+        "transactions": [
+          {
+            "id": 1,
+            "place": "Hamleys",
+            "amount": 2.5,
+            "date": "27-23-30",
+            "type": "debit"
+          },
+          {
+            "id": 2,
+            "place": "Hamleys",
+            "amount": 2.5,
+            "date": "25-07-23",
+            "type": "debit"
+          },
+          {
+            "id": 3,
+            "place": "Air Asia",
+            "amount": 300,
+            "date": "23-07-23",
+            "type": "debit"
+          },
+          {
+            "id": 4,
+            "place": "Pizza hut",
+            "amount": 10,
+            "date": "22-07-23",
+            "type": "debit"
+          },
+          {
+            "id": 5,
+            "place": "Starbucks",
+            "amount": 2.5,
+            "date": "22-07-23",
+            "type": "credit"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Jack Henry",
+        "number": "5555-5555-5555-5555",
+        "date": "27/29",
+        "cvv": "328",
+        "type": "visa",
+        "frozen": false,
+        "transactions": [
+          {
+            "id": 1,
+            "place": "Zara",
+            "amount": 2.5,
+            "date": "27-23-30",
+            "type": "debit"
+          },
+          {
+            "id": 2,
+            "place": "Coffee day",
+            "amount": 2.5,
+            "date": "25-07-23",
+            "type": "debit"
+          },
+          {
+            "id": 3,
+            "place": "Air India",
+            "amount": 300,
+            "date": "21-07-23",
+            "type": "debit"
+          },
+          {
+            "id": 4,
+            "place": "Starbucks",
+            "amount": 10,
+            "date": "21-07-23",
+            "type": "debit"
+          },
+          {
+            "id": 5,
+            "place": "Steam",
+            "amount": 2.5,
+            "date": "20-07-23",
+            "type": "credit"
+          }
+        ]
+      }
+    ]
+  }
+}
