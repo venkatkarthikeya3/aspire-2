@@ -13,9 +13,9 @@ export const useAccountStore = defineStore("account", {
   actions: {
     fill(data) {
       api
-        .get("/account")
+        .get("/b/6564151b0574da7622cc8ff9")
         .then((response) => {
-          let account = response.data;
+          let account = response.data.record.account;
           this.balance = account.balance;
           this.cards = account.cards;
           this.currentCard = this.cards[0];
@@ -30,7 +30,7 @@ export const useAccountStore = defineStore("account", {
       let card = {};
       card.name = name;
       card.number = "5555-5555-5555-5555";
-      card.date = "11-23-2023";
+      card.date = "23/33";
       card.cvv = "231";
       card.frozen = false;
       card.transactions = [
@@ -38,13 +38,11 @@ export const useAccountStore = defineStore("account", {
           id: 1,
           place: "Pizza hut",
           amount: 2.5,
-          date: "27-23-30",
+          date: "01-23-23",
           type: "debit",
         },
       ];
-      this.cards.unshift(card);
-      this.currentCard = this.cards[0];
-      console.log(this.cards);
+      this.cards.push(card);
     },
   },
 });

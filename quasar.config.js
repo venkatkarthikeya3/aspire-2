@@ -109,9 +109,9 @@ module.exports = configure(function (/* ctx */) {
           "dark-page": "#121212",
 
           positive: "#f25195", //aspire-pink
-          negative: "#edf3ff", // "aspire-light-blue-gray"
+          negative: "#0c365a", // "aspire-light-blue-gray"
           info: "#0c365a", // "aspire-darkest-blue"
-          warning: "#F2C037",
+          warning: "#edf3ff",
         },
       },
 

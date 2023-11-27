@@ -2,15 +2,16 @@
   "name": "aspire",
   "version": "0.0.1",
   "description": "Aspire Frontend test",
-  "productName": "com.aspire.test",
+  "productName": "Aspire Frontend Challenge",
   "author": "venkatkarthikeya3 <venkatkarthikeya3@gmail.com>",
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue ./",
     "format": "prettier --write \"**/*.{js,vue,scss,html,md,json}\" --ignore-path .gitignore",
     "test": "echo \"No test specified\" && exit 0",
-    "dev": "quasar dev & npx json-server db.json --port=3005",
-    "build": "quasar build"
+    "dev": "quasar dev",
+    "build": "quasar build",
+    "start": "npm install && quasar dev & npx json-server db.json --port=3005"
   },
   "dependencies": {
     "@quasar/extras": "^1.16.4",
@@ -30,6 +31,10 @@
     "json-server": "^0.17.4",
     "postcss": "^8.4.14",
     "prettier": "^2.5.1",
+    "vue-svg-inline-loader": "^2.1.5",
+    "vue-svg-inline-plugin": "^2.2.3",
+    "vue-svg-loader": "^0.16.0",
+    "vue-template-compiler": "^2.7.15",
     "vue3-carousel": "^0.3.1"
   },
   "engines": {

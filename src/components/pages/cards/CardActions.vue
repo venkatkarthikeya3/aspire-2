@@ -1,5 +1,8 @@
 <template>
-  <div class="col bg-negative text-info action-buttons-container">
+  <div
+    class="col bg-warning text-info action-buttons-container"
+    :class="{ 'action-button-container-sm': isMobile }"
+  >
     <div class="row justify-evenly">
       <div class="col-2">
         <div @click="toggleCardFreezeState">
@@ -7,8 +10,10 @@
             <div class="col">
               <q-icon class="icon" name="img:./src/assets/Freeze card.svg" />
             </div>
-            <div class="col label" v-if="!currentCard.frozen">Freeze card</div>
-            <div class="col label" v-if="currentCard.frozen">
+            <div class="col label" v-if="!account.currentCard.frozen">
+              Freeze card
+            </div>
+            <div class="col label" v-if="account.currentCard.frozen">
               Un-Freeze card
             </div>
           </div>
@@ -38,7 +43,10 @@
         </div>
       </div>
       <div class="col-2">
-        <div @click="deleteCard" class="column items-center text-center">
+        <div
+          @click="showCancelPopup = true"
+          class="column items-center text-center"
+        >
           <div class="col">
             <q-icon class="icon" name="img:./src/assets/Deactivate card.svg" />
           </div>
@@ -48,7 +56,7 @@
     </div>
   </div>
 
-  <q-dialog v-model="confirm" persistent>
+  <q-dialog v-model="showCancelPopup" persistent>
     <q-card>
       <q-card-section class="row items-center">
         <span class="q-ml-sm">Cancel this card?</span>
@@ -69,24 +77,33 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useAccountStore } from "src/stores/AccountStore";
+import { useQuasar } from "quasar";
+const $q = useQuasar();
+
+const isMobile = computed(() => {
+  console.log($q.screen.lt.md);
+  return $q.screen.lt.md;
+});
 let account = useAccountStore();
-let currentCard = account.currentCard;
-let confirm = ref(false);
+
+let showCancelPopup = ref(false);
 
 let toggleCardFreezeState = () => {
-  currentCard.frozen = !currentCard.frozen;
-  console.log(account.cards);
+  account.currentCard.frozen = !account.currentCard.frozen;
 };
 let deleteCard = () => {
-  const index = account.cards.findIndex((card) => card.id === currentCard.id);
+  const index = account.cards.findIndex(
+    (card) => card.id === account.currentCard.id
+  );
   if (account.cards.length > 1) {
     account.cards.splice(index, 1);
-    currentCard = account.cards[0];
+    account.currentCard = account.cards[0];
   } else {
     alert("can't delete all cards");
   }
+  showCancelPopup.value = false;
 };
 </script>
 <style scoped>
@@ -110,5 +127,9 @@ let deleteCard = () => {
 .buttons-container {
   display: flex;
   margin-top: 24px;
+}
+.action-button-container-sm {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 </style>

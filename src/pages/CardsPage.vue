@@ -7,14 +7,19 @@
             <div class="col balance-header">Available Balance</div>
             <div class="col">
               <div class="row q-mt-xs justify-between items-center">
-                <div class="bg-primary dollar-badge">S$</div>
-                <div class="balance">{{ account.balance }}</div>
+                <div class="bg-primary text-white dollar-badge">S$</div>
+                <div class="balance">
+                  {{ account.balance.toLocaleString() }}
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="col-auto add-button self-center q-pa-xs">
+        <div
+          @click="showAddPopup = true"
+          class="col-auto add-button self-center q-pa-xs"
+        >
           <q-icon class="icon" name="img:./src/assets/box.svg" />
           <span class="label"> New Card </span>
         </div>
@@ -26,11 +31,17 @@
       <div class="all-cards-tab">All Company cards</div>
     </div>
 
-    <div v-show="currentCard" class="row justify-evenly details-container">
+    <div
+      v-show="currentCard"
+      class="row justify-evenly details-container z-top"
+    >
       <div class="col-4 q-gutter-y-md">
-        <div class="col self-end show-card-button">
+        <div
+          @click="showCardNumber()"
+          class="col row justify-end show-card-button"
+        >
           <q-icon
-            class="show-card-icon"
+            class="show-card-icon q-mr-sm"
             name="img:./src/assets/remove_red_eye-24px.svg"
           />
           <span class="show-card-label text-primary"> Show card number </span>
@@ -50,10 +61,13 @@
       <div class="row justify-between items-center second-header">
         <div class="row items-start items-center">
           <div class="bg-primary dollar-badge">S$</div>
-          <div class="balance-sm">{{ account.balance }}</div>
+          <div class="balance-sm">{{ account.balance.toLocaleString() }}</div>
         </div>
 
-        <div class="col-auto add-button-sm self-center q-pa-xs items-center">
+        <div
+          @click="showAddPopup = true"
+          class="col-auto add-button-sm self-center q-pa-xs items-center"
+        >
           <q-icon class="add-icon-sm" name="img:./src/assets/box-1.svg" />
           <span class="add-label-sm"> New Card </span>
         </div>
@@ -62,21 +76,22 @@
         <div class="cards-tab">My Debit cards</div>
         <div class="all-cards-tab">All Company cards</div>
       </div>
-      <div class="row justify-end q-mt-xs">
+      <div class="row justify-end q-mt-xs show-card-details">
         <q-btn
-          class="bg-white text-primary"
+          @click="showCardNumber()"
+          class="bg-white text-primary card-details-btn"
           flat
           no-caps
           icon="img:./src/assets/remove_red_eye-24px-1.svg"
-          label="Show card details"
+          label="Show card number"
         />
       </div>
     </div>
-    <CardCarousel :cards="cards" />
+    <CardCarousel :cards="account.cards" />
     <CardActions />
     <CardDetails />
   </qpage>
-  <q-dialog v-model="prompt" persistent>
+  <q-dialog v-model="showAddPopup" persistent>
     <q-card style="min-width: 300px">
       <q-card-section>
         <div class="text-h6">Name on Card</div>
@@ -102,26 +117,29 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, reactive } from "vue";
 import { useAccountStore } from "src/stores/AccountStore";
-import CardActions from "src/components/CardActions.vue";
-import CardDetails from "src/components/CardDetails.vue";
-import CardCarousel from "src/components/CardCarousel.vue";
+import CardActions from "src/components/pages/cards/CardActions.vue";
+import CardDetails from "src/components/pages/cards/CardDetails.vue";
+import CardCarousel from "src/components/pages/cards/CardCarousel.vue";
 let slide = ref("style");
 let cardNameInput = ref(null);
 let account = useAccountStore();
 let cards = account.cards;
 let currentCard = account.currentCard;
 
-let prompt = ref(false);
+let showAddPopup = ref(false);
 let cardname = ref("");
 
 let addCard = () => {
   if (cardNameInput.value.validate()) {
     account.addCard(cardname.value);
     cardname.value = "";
-    prompt.value = false;
+    showAddPopup.value = false;
   }
+};
+let showCardNumber = () => {
+  account.currentCard.showNumber = !account.currentCard.showNumber;
 };
 </script>
 <style>
@@ -140,7 +158,7 @@ let addCard = () => {
 .balance {
   font-size: 26px;
   margin-left: 12px;
-  font-weight: bold;
+  font-weight: 800;
 }
 .add-button {
   background-color: #325baf;
@@ -185,11 +203,12 @@ let addCard = () => {
   width: 16px;
 }
 .show-card-label {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
 }
 .show-card-button {
-  margin-left: 260px;
+  /* margin-left: 260px;
+  position: absolute; */
 }
 .balance-header-sm {
   font-size: 14px;
@@ -220,5 +239,14 @@ let addCard = () => {
 }
 .tabs-row-sm {
   font-size: 12px;
+}
+.show-card-details {
+  z-index: 2;
+  position: absolute;
+  right: 42px;
+  top: 168px;
+  .card-details-btn {
+    border-radius: 6px;
+  }
 }
 </style>

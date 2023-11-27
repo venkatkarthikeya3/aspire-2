@@ -15,23 +15,43 @@
         <div class="route-container text-white">
           <div @click="changeRoute('home')" class="route">
             <q-icon size="24px" name="img:./src/assets/Home.svg" />
-            <span class="route-label">Home</span>
+            <span
+              class="route-label"
+              :class="{ 'route-label-active': currentRoute == 'home' }"
+              >Home</span
+            >
           </div>
-          <div @click="changeRoute('cards')" class="route text-primary">
+          <div @click="changeRoute('cards')" class="route">
             <q-icon size="24px" name="img:./src/assets/Card.svg" />
-            <span class="route-label">Cards</span>
+            <span
+              class="route-label"
+              :class="{ 'route-label-active': currentRoute == 'cards' }"
+              >Cards</span
+            >
           </div>
           <div @click="changeRoute('payments')" class="route">
             <q-icon size="24px" name="img:./src/assets/Payments.svg" />
-            <span class="route-label">Payments</span>
+            <span
+              class="route-label"
+              :class="{ 'route-label-active': currentRoute == 'payments' }"
+              >Payments</span
+            >
           </div>
           <div @click="changeRoute('credit')" class="route">
             <q-icon size="24px" name="img:./src/assets/Credit.svg" />
-            <span class="route-label">Credit</span>
+            <span
+              class="route-label"
+              :class="{ 'route-label-active': currentRoute == 'credit' }"
+              >Credit</span
+            >
           </div>
           <div @click="changeRoute('settings')" class="route">
             <q-icon size="24px" name="img:./src/assets/Account.svg" />
-            <span class="route-label">Settings</span>
+            <span
+              class="route-label"
+              :class="{ 'route-label-active': currentRoute == 'settings' }"
+              >Settings</span
+            >
           </div>
         </div>
       </div>
@@ -52,51 +72,81 @@
     <q-footer elevated class="bg-white">
       <div class="row justify-evenly items-center route-tabs-row">
         <div class="col-2">
-          <div class="column items-center text-center text-caption">
+          <div
+            @click="changeRoute('home')"
+            class="column items-center text-center text-caption"
+          >
             <div class="col">
               <q-icon size="24px" name="img:./src/assets/Logo-1.svg" />
             </div>
-            <div class="col route-label-sm" style="color: gray !important">
+            <div
+              class="col route-label-sm"
+              :class="{ 'route-label-active': currentRoute == 'home' }"
+            >
               Home
             </div>
           </div>
         </div>
         <div class="col-2">
-          <div class="column items-center text-center text-caption">
+          <div
+            @click="changeRoute('cards')"
+            class="column items-center text-center text-caption"
+          >
             <div class="col">
               <q-icon size="24px" name="img:./src/assets/pay-1.svg" />
             </div>
-            <div class="col route-label-sm" style="color: #01d167 !important">
+            <div
+              class="col route-label-sm"
+              :class="{ 'route-label-active': currentRoute == 'cards' }"
+            >
               Cards
             </div>
           </div>
         </div>
         <div class="col-2">
-          <div class="column items-center text-center text-caption">
+          <div
+            @click="changeRoute('payments')"
+            class="column items-center text-center text-caption"
+          >
             <div class="col">
               <q-icon size="24px" name="img:./src/assets/Payments.svg" />
             </div>
-            <div class="col route-label-sm" style="color: gray !important">
+            <div
+              class="col route-label-sm"
+              :class="{ 'route-label-active': currentRoute == 'payments' }"
+            >
               Payments
             </div>
           </div>
         </div>
         <div class="col-2">
-          <div class="column items-center text-center text-caption">
+          <div
+            @click="changeRoute('credit')"
+            class="column items-center text-center text-caption"
+          >
             <div class="col">
               <q-icon size="24px" name="img:./src/assets/Credit-1.svg" />
             </div>
-            <div class="col route-label-sm" style="color: gray !important">
+            <div
+              class="col route-label-sm"
+              :class="{ 'route-label-active': currentRoute == 'credit' }"
+            >
               Credit
             </div>
           </div>
         </div>
         <div class="col-2">
-          <div class="column items-center text-center text-caption">
+          <div
+            @click="changeRoute('settings')"
+            class="column items-center text-center text-caption"
+          >
             <div class="col">
               <q-icon size="24px" name="img:./src/assets/Account-1.svg" />
             </div>
-            <div class="col route-label-sm" style="color: gray !important">
+            <div
+              class="col route-label-sm"
+              :class="{ 'route-label-active': currentRoute == 'settings' }"
+            >
               Settings
             </div>
           </div>
@@ -117,7 +167,7 @@ let router = useRouter();
 let currentRoute = ref("");
 let changeRoute = (newRoute) => {
   currentRoute.value = newRoute;
-  router.push(`${currentRoute.value}`);
+  router.push(`/${currentRoute.value}`);
 };
 
 changeRoute("cards");
@@ -139,6 +189,9 @@ changeRoute("cards");
   margin-left: 16px;
   font-size: 16px;
 }
+.route-label-active {
+  color: #01d167 !important;
+}
 .route {
   margin-top: 50px;
 }
@@ -152,5 +205,6 @@ changeRoute("cards");
 .route-label-sm {
   font-size: 9px;
   font-weight: bold;
+  color: #dddddd;
 }
 </style>
