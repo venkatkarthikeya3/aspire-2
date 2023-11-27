@@ -118,9 +118,9 @@ let cardNumberArr = props.card.number.split("-");
     font-weight: 800;
   }
   .number {
-    font-size: 14px;
+    font-size: 10px;
     margin-top: 32px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-weight: bold;
   }
   .number-sm {
@@ -177,11 +177,11 @@ let cardNumberArr = props.card.number.split("-");
     margin-top: 17px;
   }
   .number-show-font {
-    font-size: 24px;
-    letter-spacing: 3px;
+    font-size: 20px;
+    letter-spacing: 2px;
   }
   .number-show-font-sm {
-    font-size: 20px;
+    font-size: 24px;
     letter-spacing: 2px;
   }
 }
