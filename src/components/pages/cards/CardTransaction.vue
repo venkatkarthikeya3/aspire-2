@@ -9,20 +9,12 @@
           'green-bg': isGreenbg,
         }"
       >
-        <q-icon
-          v-if="icon == 'box'"
-          class="icon"
-          name="img:./src/assets/file-storage.svg"
-        />
-        <q-icon
-          v-if="icon == 'flight'"
-          class="icon"
-          name="img:./src/assets/flights.svg"
-        />
+        <q-icon v-if="icon == 'box'" class="icon" name="img:file-storage.svg" />
+        <q-icon v-if="icon == 'flight'" class="icon" name="img:flights.svg" />
         <q-icon
           v-if="icon == 'speaker'"
           class="icon"
-          name="img:./src/assets/megaphone.svg"
+          name="img:megaphone.svg"
         />
       </div>
       <div class="col items-start q-pa-xs details-div">
@@ -44,7 +36,7 @@
         ><span class="amount" :class="{ 'text-primary': isCredit }">
           S$ {{ transaction.amount }}</span
         >
-        <q-icon class="next-icon" name="img:./src/assets/next.svg" />
+        <q-icon class="next-icon" name="img:next.svg" />
       </div>
     </div>
   </q-item>

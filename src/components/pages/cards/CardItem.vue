@@ -12,7 +12,7 @@
           icon1: !isMobile,
           'icon1-sm': isMobile,
         }"
-        name="img:./src/assets/Aspire Logo-1.svg"
+        name="img:Aspire Logo-1.svg"
       />
     </div>
     <div
@@ -70,7 +70,7 @@
           icon2: !isMobile,
           'icon2-sm': isMobile,
         }"
-        name="img:./src/assets/Visa Logo.svg"
+        name="img:Visa Logo.svg"
       />
     </div>
   </div>

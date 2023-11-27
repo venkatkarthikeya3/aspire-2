@@ -1,10 +1,10 @@
 <template>
   <div class="gt-sm col-4 card-details-container" v-show="currentCard">
     <q-expansion-item
-      icon="img:./src/assets/Group 11889.svg"
+      icon="img:Group 11889.svg"
       label="Card Details"
-      expand-icon="img:./src/assets/down-arrow.svg"
-      expanded-icon="img:./src/assets/down-arrow-1.svg"
+      expand-icon="img:down-arrow.svg"
+      expanded-icon="img:down-arrow-1.svg"
       header-class="bg-warning text-info accordion-header card-details-border"
     >
       <q-card class="bg-white card-details-border">
@@ -17,10 +17,10 @@
       </q-card>
     </q-expansion-item>
     <q-expansion-item
-      icon="img:./src/assets/Group 11889-1.svg"
+      icon="img:Group 11889-1.svg"
       label="Recent Transactions"
-      expand-icon="img:./src/assets/down-arrow.svg"
-      expanded-icon="img:./src/assets/down-arrow-1.svg"
+      expand-icon="img:down-arrow.svg"
+      expanded-icon="img:down-arrow-1.svg"
       header-class="bg-warning text-info accordion-header card-details-border"
       default-opened
     >
@@ -41,10 +41,10 @@
   <div class="lt-md bg-white">
     <div class="q-pa-md">
       <q-expansion-item
-        icon="img:./src/assets/Group 11889.svg"
+        icon="img:Group 11889.svg"
         label="Card Details"
-        expand-icon="img:./src/assets/down-arrow.svg"
-        expanded-icon="img:./src/assets/down-arrow-1.svg"
+        expand-icon="img:down-arrow.svg"
+        expanded-icon="img:down-arrow-1.svg"
         header-class="bg-warning text-info accordion-header card-details-border"
       >
         <q-card class="bg-white text-caption text-info card-details-border">
@@ -57,10 +57,10 @@
         </q-card>
       </q-expansion-item>
       <q-expansion-item
-        icon="img:./src/assets/Group 11889-1.svg"
+        icon="img:Group 11889-1.svg"
         label="Recent Transactions"
-        expand-icon="img:./src/assets/down-arrow.svg"
-        expanded-icon="img:./src/assets/down-arrow-1.svg"
+        expand-icon="img:down-arrow.svg"
+        expanded-icon="img:down-arrow-1.svg"
         header-class="bg-warning text-info accordion-header card-details-border"
         default-opened
       >

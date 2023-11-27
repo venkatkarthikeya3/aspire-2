@@ -3,18 +3,14 @@
     <q-drawer class="bg-info" show-if-above :width="340" side="left">
       <div class="text-start items-start drawer-container">
         <div>
-          <q-icon
-            class="logo"
-            size="100px"
-            name="img:./src/assets/Aspire Logo.svg"
-          />
+          <q-icon class="logo" size="100px" name="img:Aspire Logo.svg" />
         </div>
         <div class="text-white headline">
           Trusted way of banking for 3,000+ SMEs and startups in Singapore
         </div>
         <div class="route-container text-white">
           <div @click="changeRoute('home')" class="route">
-            <q-icon size="24px" name="img:./src/assets/Home.svg" />
+            <q-icon size="24px" name="img:Home.svg" />
             <span
               class="route-label"
               :class="{ 'route-label-active': currentRoute == 'home' }"
@@ -22,7 +18,7 @@
             >
           </div>
           <div @click="changeRoute('cards')" class="route">
-            <q-icon size="24px" name="img:./src/assets/Card.svg" />
+            <q-icon size="24px" name="img:Card.svg" />
             <span
               class="route-label"
               :class="{ 'route-label-active': currentRoute == 'cards' }"
@@ -30,7 +26,7 @@
             >
           </div>
           <div @click="changeRoute('payments')" class="route">
-            <q-icon size="24px" name="img:./src/assets/Payments.svg" />
+            <q-icon size="24px" name="img:Payments.svg" />
             <span
               class="route-label"
               :class="{ 'route-label-active': currentRoute == 'payments' }"
@@ -38,7 +34,7 @@
             >
           </div>
           <div @click="changeRoute('credit')" class="route">
-            <q-icon size="24px" name="img:./src/assets/Credit.svg" />
+            <q-icon size="24px" name="img:Credit.svg" />
             <span
               class="route-label"
               :class="{ 'route-label-active': currentRoute == 'credit' }"
@@ -46,7 +42,7 @@
             >
           </div>
           <div @click="changeRoute('settings')" class="route">
-            <q-icon size="24px" name="img:./src/assets/Account.svg" />
+            <q-icon size="24px" name="img:Account.svg" />
             <span
               class="route-label"
               :class="{ 'route-label-active': currentRoute == 'settings' }"
@@ -77,7 +73,7 @@
             class="column items-center text-center text-caption"
           >
             <div class="col">
-              <q-icon size="24px" name="img:./src/assets/Logo-1.svg" />
+              <q-icon size="24px" name="img:Logo-1.svg" />
             </div>
             <div
               class="col route-label-sm"
@@ -93,7 +89,7 @@
             class="column items-center text-center text-caption"
           >
             <div class="col">
-              <q-icon size="24px" name="img:./src/assets/pay-1.svg" />
+              <q-icon size="24px" name="img:pay-1.svg" />
             </div>
             <div
               class="col route-label-sm"
@@ -109,7 +105,7 @@
             class="column items-center text-center text-caption"
           >
             <div class="col">
-              <q-icon size="24px" name="img:./src/assets/Payments.svg" />
+              <q-icon size="24px" name="img:Payments.svg" />
             </div>
             <div
               class="col route-label-sm"
@@ -125,7 +121,7 @@
             class="column items-center text-center text-caption"
           >
             <div class="col">
-              <q-icon size="24px" name="img:./src/assets/Credit-1.svg" />
+              <q-icon size="24px" name="img:Credit-1.svg" />
             </div>
             <div
               class="col route-label-sm"
@@ -141,7 +137,7 @@
             class="column items-center text-center text-caption"
           >
             <div class="col">
-              <q-icon size="24px" name="img:./src/assets/Account-1.svg" />
+              <q-icon size="24px" name="img:Account-1.svg" />
             </div>
             <div
               class="col route-label-sm"

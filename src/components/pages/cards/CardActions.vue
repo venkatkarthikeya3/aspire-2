@@ -8,7 +8,7 @@
         <div @click="toggleCardFreezeState">
           <div class="column items-center text-center">
             <div class="col">
-              <q-icon class="icon" name="img:./src/assets/Freeze card.svg" />
+              <q-icon class="icon" name="img:Freeze card.svg" />
             </div>
             <div class="col label" v-if="!account.currentCard.frozen">
               Freeze card
@@ -21,7 +21,7 @@
       </div>
       <div class="col-2">
         <div class="column items-center text-center">
-          <q-icon class="icon" name="img:./src/assets/Set spend limit.svg" />
+          <q-icon class="icon" name="img:Set spend limit.svg" />
 
           <div class="label">Set Spend Limit</div>
         </div>
@@ -29,7 +29,7 @@
       <div class="col-2">
         <div class="column items-center text-center">
           <div class="col">
-            <q-icon class="icon" name="img:./src/assets/Gpay.svg" />
+            <q-icon class="icon" name="img:Gpay.svg" />
           </div>
           <div class="col label">Add to Gpay</div>
         </div>
@@ -37,7 +37,7 @@
       <div class="col-2">
         <div class="column items-center text-center">
           <div class="col">
-            <q-icon class="icon" name="img:./src/assets/Replace card.svg" />
+            <q-icon class="icon" name="img:Replace card.svg" />
           </div>
           <div class="col label">Replace card</div>
         </div>
@@ -48,7 +48,7 @@
           class="column items-center text-center"
         >
           <div class="col">
-            <q-icon class="icon" name="img:./src/assets/Deactivate card.svg" />
+            <q-icon class="icon" name="img:Deactivate card.svg" />
           </div>
           <div class="col label">Cancel card</div>
         </div>

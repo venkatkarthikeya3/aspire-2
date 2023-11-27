@@ -20,7 +20,7 @@
           @click="showAddPopup = true"
           class="col-auto add-button self-center q-pa-xs"
         >
-          <q-icon class="icon" name="img:./src/assets/box.svg" />
+          <q-icon class="icon" name="img:box.svg" />
           <span class="label"> New Card </span>
         </div>
       </div>
@@ -42,7 +42,7 @@
         >
           <q-icon
             class="show-card-icon q-mr-sm"
-            name="img:./src/assets/remove_red_eye-24px.svg"
+            name="img:remove_red_eye-24px.svg"
           />
           <span class="show-card-label text-primary"> Show card number </span>
         </div>
@@ -56,7 +56,7 @@
     <div class="q-pa-md text-white">
       <div class="row justify-between q-my-xs">
         <div class="balance-header-sm">Account Balance</div>
-        <div><q-icon size="25px" name="img:./src/assets/Logo.svg" /></div>
+        <div><q-icon size="25px" name="img:Logo.svg" /></div>
       </div>
       <div class="row justify-between items-center second-header">
         <div class="row items-start items-center">
@@ -68,7 +68,7 @@
           @click="showAddPopup = true"
           class="col-auto add-button-sm self-center q-pa-xs items-center"
         >
-          <q-icon class="add-icon-sm" name="img:./src/assets/box-1.svg" />
+          <q-icon class="add-icon-sm" name="img:box-1.svg" />
           <span class="add-label-sm"> New Card </span>
         </div>
       </div>
@@ -82,7 +82,7 @@
           class="bg-white text-primary card-details-btn"
           flat
           no-caps
-          icon="img:./src/assets/remove_red_eye-24px-1.svg"
+          icon="img:remove_red_eye-24px-1.svg"
           label="Show card number"
         />
       </div>
